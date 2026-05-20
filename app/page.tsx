@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="max-w-2xl mx-auto px-6 py-16 space-y-12">
       <section>
-        <h1 className="text-4xl font-bold">Your Name</h1>
+        <h1 className="text-4xl font-bold">Christian Aquise</h1>
         <p className="mt-4 text-gray-600">One sentence about what you do.</p>
       </section>
 
@@ -26,7 +26,7 @@ export default function Home() {
       <section>
         <h2 className="text-2xl font-semibold mb-4">Contact</h2>
         <p>
-          <a href="mailto:you@example.com" className="text-blue-600 underline">Email</a> · {" "}
+          <a href="mailto:christian.aquise@gmail.com" className="text-blue-600 underline">Email</a> · {" "}
           <a href="https://github.com/yourhandle" className="text-blue-600 underline">GitHub</a> · {" "}
           <a href="https://linkedin.com/in/yourhandle" className="text-blue-600 underline">LinkedIn</a>
         </p>
