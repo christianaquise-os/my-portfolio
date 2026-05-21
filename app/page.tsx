@@ -2,13 +2,24 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 py-20 md:py-32">
       <div className="mx-auto max-w-2xl">
-        {/* Header */}
+        {/* Header with portrait */}
         <header
-          className="reveal flex items-baseline justify-between font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted"
+          className="reveal flex items-center justify-between gap-4"
           style={{ animationDelay: "0ms" }}
         >
-          <span>Christian Aquise</span>
-          <span>Madrid · 2026</span>
+          <div className="flex items-center gap-3">
+            <img
+              src="/profile.jpg"
+              alt="Christian Aquise"
+              className="portrait h-12 w-12 rounded-full object-cover border border-border"
+            />
+            <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
+              Christian Aquise
+            </span>
+          </div>
+          <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
+            Madrid · 2026
+          </span>
         </header>
 
         {/* Hero */}
@@ -17,8 +28,7 @@ export default function Home() {
           style={{ animationDelay: "100ms" }}
         >
           Software engineer building{" "}
-          <em className="text-accent">thoughtful, well-crafted</em> things on
-          the web.
+          <em>thoughtful, well-crafted</em> things on the web.
         </h1>
 
         {/* About */}
@@ -36,10 +46,7 @@ export default function Home() {
         />
 
         {/* Selected work */}
-        <section
-          className="reveal"
-          style={{ animationDelay: "400ms" }}
-        >
+        <section className="reveal" style={{ animationDelay: "400ms" }}>
           <div className="flex items-baseline justify-between font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
             <span>Selected Work</span>
             <span>03</span>
@@ -79,10 +86,7 @@ export default function Home() {
         />
 
         {/* Contact */}
-        <section
-          className="reveal"
-          style={{ animationDelay: "600ms" }}
-        >
+        <section className="reveal" style={{ animationDelay: "600ms" }}>
           <div className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
             Elsewhere
           </div>
@@ -90,7 +94,7 @@ export default function Home() {
             <li>
               <a
                 href="mailto:your@email.com"
-                className="underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+                className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
               >
                 Email
               </a>
@@ -98,7 +102,7 @@ export default function Home() {
             <li>
               <a
                 href="https://github.com/christianaquise-os"
-                className="underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+                className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
               >
                 GitHub
               </a>
@@ -106,9 +110,18 @@ export default function Home() {
             <li>
               <a
                 href="https://linkedin.com/in/your-handle"
-                className="underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+                className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
               >
                 LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="/cv.pdf"
+                download
+                className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
+              >
+                CV ↓
               </a>
             </li>
           </ul>
@@ -141,7 +154,7 @@ function Project({
       <div>
         <a
           href={href}
-          className="text-xl hover:text-accent transition-colors"
+          className="text-xl underline decoration-transparent underline-offset-4 hover:decoration-foreground transition-all"
         >
           {title}
           <span className="ml-1 text-muted">↗</span>
