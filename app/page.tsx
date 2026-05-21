@@ -2,51 +2,68 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 py-20 md:py-32">
       <div className="mx-auto max-w-2xl">
-        {/* Header with portrait */}
+        {/* Portrait */}
+        <div className="reveal" style={{ animationDelay: "0ms" }}>
+          <img
+            src="/profile.jpg"
+            alt="Christian Aquise"
+            className="portrait h-28 w-28 rounded-full object-cover border border-border"
+          />
+        </div>
+
+        {/* Header meta */}
         <header
-          className="reveal flex items-center justify-between gap-4"
-          style={{ animationDelay: "0ms" }}
+          className="reveal mt-8 flex items-baseline justify-between font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted"
+          style={{ animationDelay: "100ms" }}
         >
-          <div className="flex items-center gap-3">
-            <img
-              src="/profile.jpg"
-              alt="Christian Aquise"
-              className="portrait h-12 w-12 rounded-full object-cover border border-border"
-            />
-            <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
-              Christian Aquise
-            </span>
-          </div>
-          <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
-            Madrid · 2026
-          </span>
+          <span>Christian Aquise</span>
+          <span>Madrid · 2026</span>
         </header>
 
         {/* Hero */}
         <h1
-          className="reveal mt-16 text-4xl md:text-5xl leading-[1.1] tracking-tight"
-          style={{ animationDelay: "100ms" }}
+          className="reveal mt-10 text-4xl md:text-5xl leading-[1.1] tracking-tight"
+          style={{ animationDelay: "200ms" }}
         >
           Software engineer building{" "}
           <em>thoughtful, well-crafted</em> things on the web.
         </h1>
 
-        {/* About */}
-        <p
-          className="reveal mt-10 text-lg leading-relaxed text-foreground/80"
-          style={{ animationDelay: "200ms" }}
+        {/* About — two paragraphs */}
+        <div
+          className="reveal mt-10 space-y-5 text-lg leading-relaxed text-foreground/80"
+          style={{ animationDelay: "300ms" }}
         >
-          A sentence or two about your background — where you've worked, what
-          you've built, what you care about. Keep it human and specific.
-        </p>
+          <p>
+            I'm a software engineer based in Madrid. I love taking messy ideas
+            and turning them into clean, fast, well-designed products — the kind
+            people actually enjoy using.
+          </p>
+          <p>
+            I care about the small details: a snappy interface, an honest error
+            message, an API that's easy to reason about. If you're working on
+            something interesting, I'd love to hear about it.
+          </p>
+        </div>
+
+        {/* CV button — prominent CTA */}
+        <a
+          href="/cv.pdf"
+          download
+          className="reveal mt-10 inline-flex items-center gap-3 border border-foreground px-6 py-3 text-sm font-[family-name:var(--font-mono)] uppercase tracking-[0.18em] hover:bg-foreground hover:text-background transition-colors"
+          style={{ animationDelay: "400ms" }}
+        >
+          Download my CV
+          <span aria-hidden>↓</span>
+        </a>
 
         <hr
           className="reveal my-16 border-t border-border"
-          style={{ animationDelay: "300ms" }}
+          style={{ animationDelay: "500ms" }}
         />
 
         {/* Selected work */}
-        <section className="reveal" style={{ animationDelay: "400ms" }}>
+        <section className="reveal" style={{ animationDelay: "600ms" }}>
           <div className="flex items-baseline justify-between font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
             <span>Selected Work</span>
             <span>03</span>
@@ -82,18 +99,18 @@ export default function Home() {
 
         <hr
           className="reveal my-16 border-t border-border"
-          style={{ animationDelay: "500ms" }}
+          style={{ animationDelay: "700ms" }}
         />
 
         {/* Contact */}
-        <section className="reveal" style={{ animationDelay: "600ms" }}>
+        <section className="reveal" style={{ animationDelay: "800ms" }}>
           <div className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
             Elsewhere
           </div>
           <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-lg">
             <li>
               <a
-                href="mailto:your@email.com"
+                href="mailto:christian.aquise@gmail.com"
                 className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
               >
                 Email
@@ -109,19 +126,10 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="https://linkedin.com/in/your-handle"
+                href="https://www.linkedin.com/in/christianaquise/"
                 className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
               >
                 LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="/cv.pdf"
-                download
-                className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
-              >
-                CV ↓
               </a>
             </li>
           </ul>
@@ -148,7 +156,7 @@ function Project({
 }) {
   return (
     <li className="grid grid-cols-[auto_1fr_auto] gap-x-6 items-baseline">
-      <span className="font-[family-name:var(--font-mono)] text-xs text-muted">
+      <span className="font-mono text-xs text-muted">
         {n}
       </span>
       <div>
@@ -157,18 +165,11 @@ function Project({
           className="text-xl underline decoration-transparent underline-offset-4 hover:decoration-foreground transition-all"
         >
           {title}
-          <span className="ml-1 text-muted">↗</span>
         </a>
-        <p className="mt-2 text-base text-foreground/70 leading-relaxed">
-          {description}
-        </p>
-        <p className="mt-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.18em] text-muted">
-          {stack}
-        </p>
+        <p className="mt-1 text-sm leading-relaxed text-foreground/70">{description}</p>
+        <p className="mt-1 font-mono text-xs text-muted">{stack}</p>
       </div>
-      <span className="font-[family-name:var(--font-mono)] text-xs text-muted">
-        {year}
-      </span>
+      <span className="font-[family-name:var(--font-mono)] text-xs text-muted">{year}</span>
     </li>
   );
 }
