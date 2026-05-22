@@ -16,7 +16,7 @@ const mono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Christian Aquise",
-  description: "Software engineer based in Madrid.",
+  description: "Sales engineer based in Barcelona.",
 };
 
 export default function RootLayout({
