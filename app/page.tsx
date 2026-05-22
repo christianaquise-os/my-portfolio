@@ -2,13 +2,24 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 py-20 md:py-32">
       <div className="mx-auto max-w-2xl">
-        {/* Portrait */}
-        <div className="reveal" style={{ animationDelay: "0ms" }}>
+        {/* Portrait + CV button on opposite corners */}
+        <div
+          className="reveal flex flex-wrap items-center justify-between gap-4"
+          style={{ animationDelay: "0ms" }}
+        >
           <img
             src="/profile.jpg"
             alt="Christian Aquise"
             className="portrait h-28 w-28 rounded-full object-cover border border-border"
           />
+          <a
+            href="/cv.pdf"
+            download
+            className="inline-flex items-center gap-3 border border-foreground px-6 py-3 text-sm font-[family-name:var(--font-mono)] uppercase tracking-[0.18em] hover:bg-foreground hover:text-background transition-colors"
+          >
+            Download my CV
+            <span aria-hidden>↓</span>
+          </a>
         </div>
 
         {/* Header meta */}
@@ -91,24 +102,13 @@ export default function Home() {
           </ol>
         </section>
 
-        {/* CV button */}
-        <a
-          href="/cv.pdf"
-          download
-          className="reveal mt-16 inline-flex items-center gap-3 border border-foreground px-6 py-3 text-sm font-[family-name:var(--font-mono)] uppercase tracking-[0.18em] hover:bg-foreground hover:text-background transition-colors"
-          style={{ animationDelay: "800ms" }}
-        >
-          Download my CV
-          <span aria-hidden>↓</span>
-        </a>
-
         <hr
           className="reveal my-16 border-t border-border"
-          style={{ animationDelay: "900ms" }}
+          style={{ animationDelay: "800ms" }}
         />
 
         {/* Contact */}
-        <section className="reveal" style={{ animationDelay: "1000ms" }}>
+        <section className="reveal" style={{ animationDelay: "900ms" }}>
           <div className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
             Elsewhere
           </div>
