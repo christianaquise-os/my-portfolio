@@ -5,69 +5,71 @@ import { useState } from "react";
 const translations = {
   en: {
     location: "Barcelona · 2026",
-    heroPrefix: "Engineer by training, analyst by craft — I love untangling ",
-    heroEmphasis: "complex operations",
-    heroSuffix: " and making them measurably better.",
+    heroPrefix: "I love untangling ",
+    heroEmphasis: "complex business problems",
+    heroSuffix: " and turning them into measurable outcomes.",
     description:
-      "I'm an operational analyst based in Barcelona with a background in mechanical engineering. I've worked across enterprise SaaS, university operations, and B2B distribution — building dashboards, redesigning AI-driven processes, and turning raw data into decisions that actually move the numbers. Currently pursuing a Master in International Business at EAE Business School.",
+      "I'm an analyst and business consultant based in Barcelona, with a background in mechanical engineering. I've worked across enterprise SaaS, university operations, and B2B distribution — building dashboards, redesigning AI-driven processes, and turning raw data into decisions that actually move the numbers. Currently pursuing a Master in International Business at EAE Business School.",
     cvLabel: "Download my CV",
-    quote:
-      "\u201CIn God we trust. All others must bring data.\u201D",
+    cvHref: "/cv_eng.pdf",
+    quote: "\u201CIn God we trust. All others must bring data.\u201D",
     quoteAuthor: "— W. Edwards Deming",
     rolesHeader: "What I Am",
     roles: [
       {
-        title: "Engineer",
+        title: "Engineering Analyst",
         description:
-          "Mechanical engineer by training (PUCP). I think in systems, trade-offs, and root causes — the kind of structured thinking that holds up when problems get messy.",
+          "I diagnose how systems and operations actually run — translating them into Power BI dashboards, SQL queries, and Python models that surface insights leadership can act on.",
       },
       {
-        title: "Analyst",
+        title: "Sales Developer",
         description:
-          "I turn messy operational and commercial data into clear, fact-based stories. Power BI, SQL, Python — whichever the question demands.",
+          "B2B sales and SaaS presales. I bridge product teams and enterprise clients, turning technical capability into commercial outcomes — from lead generation to closed deals.",
       },
       {
-        title: "Consultant",
+        title: "Business Strategy Consultant",
         description:
-          "I diagnose how operations actually run and drive measurable improvements — from SaaS deployments to AI-powered CX redesigns. Numbers, not opinions.",
+          "I help businesses make sharper strategic calls. Structured diagnostics, fact-based recommendations, cross-functional alignment — the work that turns operational chaos into competitive edge.",
       },
     ],
     contactHeader: "Elsewhere",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
+    githubLabel: "GitHub",
   },
   es: {
     location: "Barcelona · 2026",
-    heroPrefix: "Ingeniero de formación, analista por oficio — me encanta desentrañar ",
-    heroEmphasis: "operaciones complejas",
-    heroSuffix: " y mejorarlas de forma medible.",
+    heroPrefix: "Me encanta desentrañar ",
+    heroEmphasis: "problemas empresariales complejos",
+    heroSuffix: " y convertirlos en resultados medibles.",
     description:
-      "Soy analista de operaciones en Barcelona con formación en ingeniería mecánica. He trabajado en SaaS empresarial, operaciones universitarias y distribución B2B — construyendo dashboards, rediseñando procesos con IA y convirtiendo datos en bruto en decisiones que realmente mueven los números. Actualmente curso un Máster en Negocios Internacionales en EAE Business School.",
+      "Soy analista y consultor de negocio en Barcelona, con formación en ingeniería mecánica. He trabajado en SaaS empresarial, operaciones universitarias y distribución B2B — construyendo dashboards, rediseñando procesos con IA y convirtiendo datos en bruto en decisiones que realmente mueven los números. Actualmente curso un Máster en Negocios Internacionales en EAE Business School.",
     cvLabel: "Descargar mi CV",
-    quote:
-      "\u201CEn Dios confiamos. Los demás, que traigan datos.\u201D",
+    cvHref: "/cv_es.pdf",
+    quote: "\u201CEn Dios confiamos. Los demás, que traigan datos.\u201D",
     quoteAuthor: "— W. Edwards Deming",
     rolesHeader: "Lo que soy",
     roles: [
       {
-        title: "Ingeniero",
+        title: "Analista de Ingeniería",
         description:
-          "Ingeniero mecánico de formación (PUCP). Pienso en sistemas, compromisos y causas raíz — el tipo de razonamiento estructurado que aguanta cuando los problemas se complican.",
+          "Diagnostico cómo funcionan realmente los sistemas y las operaciones — traduciéndolos a dashboards de Power BI, consultas SQL y modelos en Python que revelan información accionable para la dirección.",
       },
       {
-        title: "Analista",
+        title: "Desarrollador Comercial",
         description:
-          "Convierto datos operativos y comerciales desordenados en historias claras y basadas en hechos. Power BI, SQL, Python — la herramienta que pida la pregunta.",
+          "Ventas B2B y presales de SaaS. Hago de puente entre equipos de producto y clientes corporativos, convirtiendo capacidad técnica en resultados comerciales — desde la generación de leads hasta el cierre.",
       },
       {
-        title: "Consultor",
+        title: "Consultor de Estrategia Empresarial",
         description:
-          "Diagnostico cómo funcionan realmente las operaciones e impulso mejoras medibles — desde despliegues de SaaS hasta rediseños de CX con IA. Números, no opiniones.",
+          "Ayudo a las empresas a tomar decisiones estratégicas más afiladas. Diagnósticos estructurados, recomendaciones basadas en hechos, alineación interfuncional — el trabajo que convierte el caos operativo en ventaja competitiva.",
       },
     ],
     contactHeader: "También en",
     emailLabel: "Correo",
     linkedinLabel: "LinkedIn",
+    githubLabel: "GitHub",
   },
 };
 
@@ -119,9 +121,9 @@ export default function Home() {
             className="portrait h-28 w-28 rounded-full object-cover border border-border"
           />
           <a
-            href="/cv.pdf"
+            href={t.cvHref}
             download
-            className="inline-flex items-center gap-3 border border-foreground px-6 py-3 text-sm font-[family-name:var(--font-mono)] uppercase tracking-[0.18em] hover:bg-foreground hover:text-background transition-colors"
+            className="inline-flex items-center gap-3 border border-foreground px-6 py-3 text-xs font-[family-name:var(--font-mono)] uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
           >
             {t.cvLabel}
             <span aria-hidden>↓</span>
@@ -139,7 +141,7 @@ export default function Home() {
 
         {/* Hero */}
         <h1
-          className="reveal mt-10 text-4xl md:text-5xl leading-[1.1] tracking-tight"
+          className="reveal mt-10 text-3xl leading-[1.2] tracking-tight"
           style={{ animationDelay: "300ms" }}
         >
           {t.heroPrefix}
@@ -165,7 +167,7 @@ export default function Home() {
           className="reveal text-center"
           style={{ animationDelay: "600ms" }}
         >
-          <blockquote className="text-2xl md:text-3xl italic leading-snug">
+          <blockquote className="text-3xl italic leading-snug">
             {t.quote}
           </blockquote>
           <figcaption className="mt-6 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
@@ -224,6 +226,14 @@ export default function Home() {
                 {t.linkedinLabel}
               </a>
             </li>
+            <li>
+              <a
+                href="https://github.com/christianaquise-os"
+                className="underline decoration-border underline-offset-4 hover:decoration-foreground transition-all"
+              >
+                {t.githubLabel}
+              </a>
+            </li>
           </ul>
         </section>
       </div>
@@ -246,8 +256,8 @@ function Role({
         {n}
       </span>
       <div>
-        <h3 className="text-xl">{title}</h3>
-        <p className="mt-2 text-base text-foreground/70 leading-relaxed">
+        <h3 className="text-lg italic">{title}</h3>
+        <p className="mt-2 text-lg text-foreground/70 leading-relaxed">
           {description}
         </p>
       </div>
