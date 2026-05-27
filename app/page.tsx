@@ -33,6 +33,19 @@ const translations = {
           "I help businesses make sharper strategic calls. Structured diagnostics, fact-based recommendations, cross-functional alignment — the work that turns operational chaos into competitive edge.",
       },
     ],
+    skillsHeader: "Skills",
+    skills: [
+      "Power BI",
+      "SQL",
+      "Python",
+      "Excel",
+      "AI / APIs",
+      "SaaS Presales",
+      "B2B Sales",
+      "Agile Project Management",
+      "Strategic Problem-Solving",
+      "Cross-Cultural Communication",
+    ],
     contactHeader: "Elsewhere",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
@@ -67,6 +80,19 @@ const translations = {
         description:
           "Ayudo a las empresas a tomar decisiones estratégicas más afiladas. Diagnósticos estructurados, recomendaciones basadas en hechos, alineación interfuncional — el trabajo que convierte el caos operativo en ventaja competitiva.",
       },
+    ],
+    skillsHeader: "Habilidades",
+    skills: [
+      "Power BI",
+      "SQL",
+      "Python",
+      "Excel",
+      "AI / APIs",
+      "Preventa SaaS",
+      "Ventas B2B",
+      "Gestión Ágil de Proyectos",
+      "Resolución Estratégica",
+      "Comunicación Intercultural",
     ],
     contactHeader: "También en",
     emailLabel: "Correo",
@@ -159,7 +185,7 @@ export default function Home() {
           {t.description}
         </p>
 
-        {/* Quote — subtle, inline pull-quote style */}
+        {/* Quote */}
         <figure
           className="reveal mt-10 border-l border-border pl-5"
           style={{ animationDelay: "500ms" }}
@@ -201,8 +227,31 @@ export default function Home() {
           style={{ animationDelay: "800ms" }}
         />
 
-        {/* Contact — icons */}
+        {/* Skills */}
         <section className="reveal" style={{ animationDelay: "900ms" }}>
+          <div className="flex items-baseline justify-between font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
+            <span>{t.skillsHeader}</span>
+            <span>{String(t.skills.length).padStart(2, "0")}</span>
+          </div>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-[family-name:var(--font-mono)] text-sm uppercase tracking-[0.1em]">
+            {t.skills.map((skill) => (
+              <li
+                key={skill}
+                className="text-foreground/30 font-normal hover:text-foreground hover:font-semibold transition-all duration-300 cursor-default"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <hr
+          className="reveal my-16 border-t border-border"
+          style={{ animationDelay: "1000ms" }}
+        />
+
+        {/* Contact */}
+        <section className="reveal" style={{ animationDelay: "1100ms" }}>
           <div className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-muted">
             {t.contactHeader}
           </div>
@@ -264,8 +313,6 @@ function Role({
     </li>
   );
 }
-
-/* ----- icons ----- */
 
 function EmailIcon() {
   return (
