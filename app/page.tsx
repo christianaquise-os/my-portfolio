@@ -108,11 +108,23 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 py-20 md:py-32">
       <div className="mx-auto max-w-2xl">
-        {/* Language toggle */}
+        {/* Language toggle + theme toggle */}
         <div
-          className="reveal flex justify-end font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em]"
+          className="reveal flex items-center justify-between font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em]"
           style={{ animationDelay: "0ms" }}
         >
+          <button
+            onClick={() => {
+              const isDark = document.documentElement.classList.toggle("dark");
+              localStorage.setItem("theme", isDark ? "dark" : "light");
+            }}
+            className="text-muted hover:text-foreground transition-colors text-base leading-none"
+            aria-label="Toggle dark mode"
+          >
+            <span className="dark:hidden">☾</span>
+            <span className="hidden dark:inline">☀</span>
+          </button>
+          <div className="flex">
           <button
             onClick={() => setLang("es")}
             className={
@@ -136,6 +148,7 @@ export default function Home() {
           >
             ENG
           </button>
+          </div>
         </div>
 
         {/* Portrait + CV button */}
